@@ -91,7 +91,7 @@ Since my actual `validate.email()` simply returns true, this test is going to fa
 
 ### Asynchronous Code
 
-Let's say we're reaching out to a service to validate an address's zipcode. There's a bit of a trick to aynschronous code. We need to call `done()` in the callback to let Mocha know that we're finished.
+Let's say we're reaching out to a service to validate an address' zipcode. There's a bit of a trick to aynschronous code. We need to pass `done` to the test and call `done()` in the callback to let Mocha know that we're finished.
 
 ``` javascript
 describe('Address validation', function () {
@@ -145,7 +145,8 @@ describe('Phone number validation', function () {
     //lets define what we expect in the first place
     var expected_phone_validation = ['contains-dashes', 'no-area-code'];
 
-    //then we'll store the result in a variable this time so we can perform multiple asserts/shoulds
+    //then we'll store the result in a variable
+    //so we can perform multiple asserts/shoulds
     var phone_validation = validate.phone('555-5555');
 
     phone_validation.length.should.equal(2);
@@ -243,7 +244,7 @@ The `--watch` flag is what makes Mocha, in my opinion, a must have. Executing te
 
 Sometimes (especially when building modules) we'll want to actually debug our tests while they're running. Maybe getting to a debugable point is time consuming, or we'd have to write goofy plumbing code just to reach that point. `--debug-brk` allows IDEs (and other tools) to attach a debugger, and allows us to put breakpoints in our tests and our code. This also allows us to debug in isolation, without relying on dependencies to debug our code.
 
-One easy, crossplatform way we can accomplish debugging in Mocha tests is by using node-inspector and Chrome. There's a great post on that (here)[http://blog.andrewray.me/how-to-debug-mocha-tests-with-chrome/]. Visual Studio Node Tools also supports running and debugging tests. WebStorm, unfortunately, only supports running tests.   
+One easy, crossplatform way we can accomplish debugging in Mocha tests is by using node-inspector and Chrome. There's a great post on that [here](http://blog.andrewray.me/how-to-debug-mocha-tests-with-chrome/). Visual Studio Node Tools also supports running and debugging tests. WebStorm, unfortunately, only supports running tests.   
 
 
 ---
