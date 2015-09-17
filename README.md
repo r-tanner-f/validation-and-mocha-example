@@ -161,13 +161,7 @@ describe('Phone number validation', function () {
 
 Tada!
 
-## Workflow
-
-Mocha does shift our workflow a little. We might not `node app.js` all the time, which is handy if we can't really even *run* `node app.js` to poke around at our app (like when we're building a module). But how do we debug if we can't run the app standalone?
-
-Let's talk about a few ways we can run Mocha.
-
-### Command Line
+## Running Tests
 
 The simplest way to run is by navigating to our project's directory and running the command Mocha:
 
@@ -238,15 +232,18 @@ Adorable! There's other Mocha flags we might want to use, such as:
 
 ### Watch
 
-The `--watch` flag is what makes Mocha, in my opinion, a must have. Executing tests on file save can really speed up our workflow. If we've reached a sticking point in our code, write a few tests rather than constantly spinning up the debugger; once your tests pass you know you've got the solution. Or, write our tests first and then code until we've done what we intended to do.
+The `--watch` flag is what makes Mocha, in my opinion, a must have. Executing tests on file save can really speed up our workflow. If we've reached a sticking point in our code, write a few tests rather than constantly spinning up the debugger; once our tests pass we know we've got the solution. Or, write our tests first and then code until we've done what we intended to do.
 
 ### Debugging Tests
 
-Sometimes (especially when building modules) we'll want to actually debug our tests while they're running. Maybe getting to a debugable point is time consuming, or we'd have to write goofy plumbing code just to reach that point. `--debug-brk` allows IDEs (and other tools) to attach a debugger, and allows us to put breakpoints in our tests and our code. This also allows us to debug in isolation, without relying on dependencies to debug our code.
+Sometimes (especially when building modules) we'll want to actually debug our tests while they're running. Maybe getting to a debugable point is time consuming, or we'd have to write goofy plumbing code just to reach that point. `--debug-brk` allows IDEs (and other tools) to attach a debugger, and allows us to put breakpoints in our tests and our code. This also allows us to debug in isolation, without relying on dependencies like Express to debug our code individual pieces of our code.
 
-One easy, crossplatform way we can accomplish debugging in Mocha tests is by using node-inspector and Chrome. There's a great post on that [here](http://blog.andrewray.me/how-to-debug-mocha-tests-with-chrome/). Visual Studio Node Tools also supports running and debugging tests. WebStorm, unfortunately, only supports running tests.   
+One easy, crossplatform way we can accomplish debugging in Mocha tests is by using node-inspector and Chrome. There's a great post on that [here](http://blog.andrewray.me/how-to-debug-mocha-tests-with-chrome/). Visual Studio Node Tools also supports running and debugging tests. WebStorm, unfortunately, only supports running tests.
 
+I'm not particularly fond of debugging in Chrome, and Visual Studio can be a touch finicky about where tests are (the *project file* must be aware of the test files. VS will not assume they're in the test folder.) I do however find myself relying much less on debugging anyway, since spinning up any debugger feels like an eternity when compared to `mocha -w` firing off my results instantly.
 
----
+## Workflow
+
+Mocha does shift our workflow a little. We might not `node app.js` all the time, which is handy if we can't really even *run* `node app.js` to poke around at our app (like when we're building a module). Since we can debug individual tests, our time spent poking around in the debugger is greatly reduced -- no need to send a POST request to test the inner workings of a function called from the controller.
 
 Once we've gotten a handle on unit testing with Mocha, we might start thinking differently about our code. Unit testing makes it much easier to write and debug small, discrete units of code, and encourages breaking apart the monolith.
