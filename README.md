@@ -26,7 +26,6 @@ First, a few dependencies.
 Chai isn't strictly necessary, but I do prefer the 'should' phrasing versus asserts:
 
 ``` javascript
-var assert = require('assert');
 var should = require('chai').should();
 var chai = require('chai');
 

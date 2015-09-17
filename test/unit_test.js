@@ -1,5 +1,4 @@
 //Dependencies
-var assert = require('assert');
 var should = require('chai').should();
 var chai = require('chai');
 
