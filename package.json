@@ -1,0 +1,22 @@
+{
+  "name": "validation-and-mocha-example",
+  "version": "1.0.0",
+  "description": "a short example of how mocha could test validation functions",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/r-tanner-f/validation-and-mocha-example.git"
+  },
+  "author": "tanner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/r-tanner-f/validation-and-mocha-example/issues"
+  },
+  "homepage": "https://github.com/r-tanner-f/validation-and-mocha-example",
+  "devDependencies": {
+    "chai": "^3.2.0"
+  }
+}
