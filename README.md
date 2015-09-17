@@ -16,6 +16,8 @@ mocha
 
 ## The Code
 
+`git clone https://github.com/r-tanner-f/validation-and-mocha-example.git` if you want to grab all the code in the examples.
+
 After we've created our `test` folder, let's drop a unit_test.js file in there for Mocha to chew on.
 
 ### Dependencies
