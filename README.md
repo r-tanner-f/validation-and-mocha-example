@@ -16,9 +16,10 @@ mocha
 
 ## The Code
 
-First, a few dependencies.
+After we've created our `test` folder, let's drop a unit_test.js file in there for Mocha to chew on.
 
 ### Dependencies
+First, a few dependencies.
 
 Chai isn't strictly necessary, but I do prefer the 'should' phrasing versus asserts:
 
