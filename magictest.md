@@ -2,6 +2,6 @@
 
 Here goes:
 
-![magic.gif](/magic.png)
+![magic.gif](/magic.gif)
 
 Awwwww yeaaaahh...
