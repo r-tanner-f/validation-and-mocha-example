@@ -70,8 +70,6 @@ describe('Email validation', function () {
 ```
 Mocha and Chai do some kind of voodoo magic to add `.should.be.true` to our code under test.
 
-![magic.gif](/magic.gif)
-
 So how about a test that *doesn't* pass?
 
 ``` javascript
